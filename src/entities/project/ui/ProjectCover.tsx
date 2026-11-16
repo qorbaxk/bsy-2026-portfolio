@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { cn } from '@/shared/lib/cn'
+import { withBasePath } from '@/shared/lib'
 import type { Project } from '../model/types'
 
 /**
@@ -32,7 +33,7 @@ export function ProjectCover({ project, sizes, preload = false, className }: Pro
     <div className={cn('relative aspect-[4/3] overflow-hidden rounded-md bg-surface-muted', className)}>
       {cover ? (
         <Image
-          src={cover.src}
+          src={withBasePath(cover.src)}
           alt=""
           fill
           sizes={sizes}
