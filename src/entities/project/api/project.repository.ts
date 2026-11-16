@@ -1,3 +1,4 @@
+import { ecoRemarket } from './data/eco-remarket'
 import { hospitalReservation } from './data/hospital-reservation'
 import { marketInsight } from './data/market-insight'
 import { pds } from './data/pds'
@@ -5,7 +6,7 @@ import { sellfitAi } from './data/sellfit-ai'
 import type { FeaturedMetric, Project, ProjectSlug } from '../model/types'
 
 /** order 오름차순으로 정렬된 전체 프로젝트. */
-const PROJECTS: readonly Project[] = [marketInsight, sellfitAi, pds, hospitalReservation].toSorted((a, b) => a.order - b.order)
+const PROJECTS: readonly Project[] = [marketInsight, sellfitAi, pds, hospitalReservation, ecoRemarket].toSorted((a, b) => a.order - b.order)
 
 /**
  * @alias 프로젝트 목록 조회

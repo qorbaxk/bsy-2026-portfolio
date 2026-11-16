@@ -2,7 +2,7 @@
  * @alias 프로젝트 슬러그
  * @description 프로젝트 상세 페이지 URL(/projects/[slug])에 쓰이는 고유 식별자.
  */
-export type ProjectSlug = 'market-insight' | 'sellfit-ai' | 'pds' | 'hospital-reservation'
+export type ProjectSlug = 'market-insight' | 'sellfit-ai' | 'pds' | 'hospital-reservation' | 'eco-remarket'
 
 /**
  * @alias 핵심 수치
