@@ -124,37 +124,6 @@ export const hospitalReservation: Project = {
       ],
     },
     {
-      id: 'secure-target-access',
-      category: '보안 · 초기 로딩',
-      title: '보안 요건에 맞춘 수진자 정보 접근 방식',
-      lead: '인증 뒤 여러 화면에서 필요한 정보를 다루면서, 초기 저장 방식을 보안 심사에 맞게 변경했다.',
-      media: [
-        {
-          type: 'image',
-          src: '/images/projects/hospital-reservation/phone-verification.webp',
-          alt: '병원 모바일 웹의 휴대폰 인증 화면. 인증하기 버튼이 있다.',
-          width: 945,
-          height: 890,
-          caption: '휴대폰 인증 화면. 인증을 마친 뒤 수진자 정보를 조회해 이후 화면에서 사용한다.',
-        },
-        {
-          type: 'image',
-          src: '/images/projects/hospital-reservation/portal-home.webp',
-          alt: '병원 건강의학부 홈페이지. 예약조회, 웹문진, 결과조회, 증명서 발급 안내 메뉴가 보인다.',
-          width: 2000,
-          height: 1134,
-          caption: '건강의학부 홈페이지의 예약조회·웹문진 진입 메뉴.',
-        },
-      ],
-      problem:
-        '인증 뒤 조회한 수진자 정보를 처음에는 브라우저에 유지했다. 보안 심사와 데이터 신뢰성 요구를 반영해 저장 방식을 재검토했다.',
-      pointsStyle: 'list',
-      points: [
-        { title: '조회·초기 로딩', description: 'TanStack Query prefetching·캐시와 SSR을 도입해 화면에 필요한 정보를 준비' },
-        { title: '공통 접근 로직', description: 'useTarget 커스텀 훅으로 B2B·B2C의 수진자 정보 공유 로직을 재사용' },
-      ],
-    },
-    {
       id: 'mock-api',
       category: 'Mock API · 협업',
       title: 'API가 없는 상태에서 화면 개발을 진행한 방식',
