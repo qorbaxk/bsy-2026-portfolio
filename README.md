@@ -21,6 +21,15 @@ npm run lint && npm run typecheck
 배포 시 `NEXT_PUBLIC_SITE_URL`에 실제 도메인을 지정합니다(`.env.example` 참고).
 사이트맵, canonical, Open Graph, JSON-LD의 기준 주소로 쓰입니다.
 
+## GitHub Pages 배포
+
+`main`에 push하면 `.github/workflows/deploy.yml`이 린트와 타입 검사 후 정적 파일(`out/`)로 빌드해 GitHub Pages에 배포합니다.
+
+- 저장소 **Settings → Pages → Source**를 **GitHub Actions**로 한 번 지정해야 합니다.
+- 사이트 주소와 경로는 Pages 설정에서 읽습니다. 저장소 이름 경로(`/bsy-2026-portfolio`)와 커스텀 도메인 모두 별도 수정 없이 동작합니다.
+- 정적 호스팅이라 `next.config.ts`의 보안 헤더(`X-Frame-Options` 등)는 Pages에서 적용되지 않습니다. 일반 빌드(`npm run build && npm run start`)에서는 그대로 적용됩니다.
+- 로컬에서 같은 결과를 보려면 `STATIC_EXPORT=true npm run build` 후 `out/`을 정적 서버로 열면 됩니다. 저장소 이름 경로로 확인하려면 `NEXT_PUBLIC_BASE_PATH=/bsy-2026-portfolio`도 함께 지정합니다.
+
 ## 폴더 구조 (Feature-Sliced Design)
 
 Next.js의 `app/`은 라우팅만 담당하고, FSD 레이어는 `src/` 아래에 둡니다.
