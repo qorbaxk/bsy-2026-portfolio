@@ -1,11 +1,11 @@
 import { kbshReservation } from './data/kbsh-reservation'
-import { lgMi } from './data/lg-mi'
+import { marketInsight } from './data/market-insight'
 import { pds } from './data/pds'
 import { sellfitAi } from './data/sellfit-ai'
 import type { FeaturedMetric, Project, ProjectSlug } from '../model/types'
 
 /** order 오름차순으로 정렬된 전체 프로젝트. */
-const PROJECTS: readonly Project[] = [lgMi, sellfitAi, pds, kbshReservation].toSorted((a, b) => a.order - b.order)
+const PROJECTS: readonly Project[] = [marketInsight, sellfitAi, pds, kbshReservation].toSorted((a, b) => a.order - b.order)
 
 /**
  * @alias 프로젝트 목록 조회
