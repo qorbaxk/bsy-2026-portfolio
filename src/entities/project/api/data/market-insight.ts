@@ -45,11 +45,17 @@ export const marketInsight: Project = {
   ],
   stack: ['React', 'TypeScript', 'ECharts', 'Java', 'Spring Boot', 'ClickHouse', 'Redis', 'AWS S3'],
   cover: {
+    src: '/images/projects/market-insight/dashboard-rank-change.webp',
+    alt: 'Market Insight의 순위권 변동 분석 화면. 7일 전과 비교해 1~40위 순위권에 진입한 상품과 이탈한 상품을 도넛 차트 두 개로 보여준다.',
+    width: 2000,
+    height: 1093,
+    position: 'center',
+  },
+  detailCover: {
     src: '/images/projects/market-insight/login-screen.webp',
     alt: 'Market Insight 서비스의 로그인 화면. 서비스 이름과 커넥트웨이브 로고 아래에 이메일과 비밀번호 입력란, 로그인 버튼이 있다.',
     width: 2000,
     height: 1093,
-    position: 'center',
   },
   highlights: [
     {
