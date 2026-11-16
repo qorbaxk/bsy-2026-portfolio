@@ -41,10 +41,7 @@ export const ecoRemarket: Project = {
   ],
   outcome:
     '운영자가 물품 검수부터 브랜드, 커뮤니티, 앱 노출까지 관리하는 백오피스를 개발했고, 오픈 당일 에러 대응과 이후 유지보수까지 맡았습니다.',
-  metrics: [
-    { value: 'FE 4 · BE 3', label: '프로젝트 인력', caption: '백오피스는 프론트엔드 2명이 분담' },
-    { value: '6개', label: '검수 상태 탭', caption: '신청·검수·대기·판매·판매완료·폐기' },
-  ],
+  metrics: [],
   stack: ['Next.js 12', 'React', 'TypeScript', 'Redux', 'styled-components'],
   cover: {
     src: '/images/projects/eco-remarket/app-home.webp',

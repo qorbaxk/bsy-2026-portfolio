@@ -42,7 +42,6 @@ export const marketInsight: Project = {
     '기존 서비스보다 빠른 조회를 목표로 시작한 v2에서, 대용량 데이터도 조건별로 빠르게 조회하는 대시보드를 제공했습니다. 운영 중에는 정상 배치가 멈춘 것으로 오판되던 원인을 쿼리 로그 측정으로 찾아 판정 기준을 조정했습니다.',
   metrics: [
     { value: '13개', label: '대시보드 화면', caption: '판매·가격·리뷰·검색 노출 분석과 원본 데이터 다운로드', featured: true },
-    { value: '4종', label: '데이터 마트', caption: '전시·판매·검색·리뷰' },
   ],
   stack: ['React', 'TypeScript', 'ECharts', 'Java', 'Spring Boot', 'ClickHouse', 'Redis', 'AWS S3'],
   cover: {

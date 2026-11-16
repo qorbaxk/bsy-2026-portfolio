@@ -43,7 +43,6 @@ export const hospitalReservation: Project = {
   ],
   outcome: '유선 전화와 포털로 받던 검진 예약을 웹으로 옮겨, 수진자가 직접 예약과 문진을 진행하는 흐름을 만들었습니다.',
   metrics: [
-    { value: 'FE 2 · BE 7', label: '프로젝트 인력', caption: '프론트엔드 기여도 50%' },
     { value: '최대 4단계', label: '동적 웹문진', caption: '답변에 따라 다음 질문이 달라짐' },
   ],
   stack: ['Next.js 14', 'React', 'TypeScript', 'TanStack Query', 'Recoil', 'React Hook Form', 'Tailwind CSS', 'MSW'],
