@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { ScrollToTopButton } from '@/features/scroll-to-top'
 import { SITE } from '@/shared/config/site'
 import { Container, GuideColumns, PixelArrow } from '@/shared/ui'
 
@@ -15,13 +15,12 @@ export function SiteFooter() {
           BSY
         </p>
         <p className="text-sm text-ink-muted">© 2026 {SITE.name}. Built with Next.js &amp; Tailwind CSS.</p>
-        <Link
-          href="#"
+        <ScrollToTopButton
           className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-medium text-ink transition-opacity duration-200 hover:opacity-70"
         >
           맨 위로
           <PixelArrow size={14} className="-rotate-90" />
-        </Link>
+        </ScrollToTopButton>
       </Container>
     </footer>
   )
