@@ -121,7 +121,7 @@ note: { label: '설계 원칙', text: '공개 API를 좁히고, 앱별 차이는
 `src/entities/project/model/types.ts`
 
 ```ts
-export type ProjectSlug = 'lg-mi' | 'sellfit-ai' | 'pds' | 'kbsh-reservation' | 'kebab-case-slug'
+export type ProjectSlug = 'market-insight' | 'sellfit-ai' | 'pds' | 'hospital-reservation' | 'kebab-case-slug'
 ```
 
 `src/entities/project/api/project.repository.ts`
@@ -129,7 +129,7 @@ export type ProjectSlug = 'lg-mi' | 'sellfit-ai' | 'pds' | 'kbsh-reservation' | 
 ```ts
 import { camelCaseName } from './data/kebab-case-slug'
 // ...
-const PROJECTS: readonly Project[] = [lgMi, sellfitAi, pds, kbshReservation, camelCaseName].toSorted((a, b) => a.order - b.order)
+const PROJECTS: readonly Project[] = [marketInsight, sellfitAi, pds, hospitalReservation, camelCaseName].toSorted((a, b) => a.order - b.order)
 ```
 
 import 줄은 기존처럼 파일명 알파벳 순서로 끼워 넣는다.
