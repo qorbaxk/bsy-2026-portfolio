@@ -7,10 +7,11 @@ import { ButtonLink, Container, GuideBand, Icon } from '@/shared/ui'
 
 /**
  * @alias 케이스 스터디 머리말
- * @description 프로젝트 제목, 한 줄 소개, 기술 스택, 서비스 링크(있을 때만), 대표 화면을 보여주는 상세 페이지 상단. 대표 이미지는 next/image로 AVIF/WebP 변환과 반응형 크기를 적용한다.
+ * @description 프로젝트 제목, 한 줄 소개, 기술 스택, 서비스 링크(있을 때만), 대표 화면(detailCover가 있으면 그것, 없으면 cover)을 보여주는 상세 페이지 상단. 이미지는 next/image로 AVIF/WebP 변환과 반응형 크기를 적용한다.
  */
 export function CaseStudyHeader({ project }: { project: Project }) {
-  const { order, title, headline, company, period, stack, links, cover } = project
+  const { order, title, headline, company, period, stack, links } = project
+  const cover = project.detailCover ?? project.cover
 
   return (
     <GuideBand guides="quarters">

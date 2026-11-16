@@ -219,5 +219,7 @@ export interface Project {
   links?: readonly ProjectLink[]
   /** 목록 카드와 상세 상단에 쓰는 대표 화면 */
   cover?: ProjectCover
+  /** 상세 페이지 상단에서 cover 대신 보여줄 화면. 생략하면 cover를 쓴다. 목록 카드와 히어로에는 쓰이지 않는다. */
+  detailCover?: ProjectCover
   highlights: readonly CaseHighlight[]
 }
