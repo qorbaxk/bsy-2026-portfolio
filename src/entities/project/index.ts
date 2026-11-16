@@ -1,5 +1,6 @@
 export { getAdjacentProjects, getFeaturedMetrics, getProjectBySlug, getProjectSlugs, getProjects } from './api/project.repository'
-export type { CaseHighlight, CaseMedia, FeaturedMetric, Project, ProjectMetric, ProjectSlug } from './model/types'
+export type { CaseHighlight, CaseMedia, FeaturedMetric, Project, ProjectBackground, ProjectMetric, ProjectSlug } from './model/types'
+export { BackgroundPanel } from './ui/BackgroundPanel'
 export { HighlightArticle } from './ui/HighlightArticle'
 export { MetricStat } from './ui/MetricStat'
 export { ProjectCard } from './ui/ProjectCard'

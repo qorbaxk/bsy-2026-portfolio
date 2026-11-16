@@ -15,6 +15,12 @@ export interface ProjectCoverProps {
   className?: string
 }
 
+/** 이미지 기준 위치별 object-position 클래스. Tailwind가 정적으로 읽을 수 있게 전체 문자열로 둔다. */
+const POSITION_CLASS = {
+  'left-top': 'object-left-top',
+  center: 'object-center',
+} as const
+
 /**
  * @alias 프로젝트 커버
  * @description 타일을 서비스 화면으로 빈틈없이 채운다(object-cover). 화면 비율이 타일과 다르면 왼쪽 위를 기준으로 잘라 사이드바와 제목이 보이게 한다. 이미지가 없는 프로젝트는 점 격자 패턴으로 대신해 카드 높이를 맞춘다.
@@ -32,7 +38,10 @@ export function ProjectCover({ project, sizes, preload = false, className }: Pro
           sizes={sizes}
           preload={preload}
           fetchPriority={preload ? 'high' : undefined}
-          className="object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
+          className={cn(
+            'object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none',
+            POSITION_CLASS[cover.position ?? 'left-top'],
+          )}
         />
       ) : (
         <div

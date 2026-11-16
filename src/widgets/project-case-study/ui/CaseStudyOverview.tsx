@@ -1,4 +1,4 @@
-import { MetricStat, type Project } from '@/entities/project'
+import { BackgroundPanel, MetricStat, type Project } from '@/entities/project'
 import { getHeadingId } from '@/shared/lib/dom-id'
 
 /** 개요 섹션의 DOM id. 목차와 aria-labelledby가 공유한다. */
@@ -9,7 +9,7 @@ export const OVERVIEW_SECTION_ID = 'overview'
  * @description 핵심 기여, 대표 수치, 담당 업무, 성과를 한 화면에서 훑어볼 수 있게 정리한 요약 영역.
  */
 export function CaseStudyOverview({ project }: { project: Project }) {
-  const { contributions, metrics, responsibilities, outcome } = project
+  const { background, contributions, metrics, responsibilities, outcome } = project
   const headingId = getHeadingId(OVERVIEW_SECTION_ID)
 
   return (
@@ -17,6 +17,8 @@ export function CaseStudyOverview({ project }: { project: Project }) {
       <h2 id={headingId} className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
         한눈에 보기
       </h2>
+
+      {background ? <BackgroundPanel background={background} /> : null}
 
       <ul className="mt-6 grid gap-3 sm:grid-cols-3">
         {contributions.map((item, index) => (

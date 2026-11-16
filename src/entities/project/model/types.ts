@@ -158,6 +158,23 @@ export interface ProjectCover {
   alt: string
   width: number
   height: number
+  /** 타일에서 잘릴 때 기준 위치. 기본은 왼쪽 위(사이드바와 제목이 보임), 가운데에 화면이 있는 이미지는 center */
+  position?: 'left-top' | 'center'
+}
+
+/**
+ * @alias 프로젝트 배경
+ * @description 프로젝트를 처음 보는 사람이 이해할 수 있도록 서비스 목적, 참여 주체, 데이터 흐름, 내 역할 범위를 설명한다.
+ */
+export interface ProjectBackground {
+  /** 서비스가 무엇이고 누가 어떻게 쓰는지 */
+  about: string
+  /** 참여 주체와 각자의 역할. 설명이 꼭 필요한 프로젝트에만 둔다. */
+  parties?: readonly CasePoint[]
+  /** 데이터가 오가는 순서 */
+  flow: readonly FlowNode[]
+  /** 내가 맡은 범위와 맡지 않은 범위 */
+  role: string
 }
 
 /**
@@ -175,6 +192,8 @@ export interface Project {
   headline: string
   /** 메타 설명과 카드 요약에 쓰이는 문장 */
   summary: string
+  /** 서비스 맥락 설명. 도메인 지식이 필요한 프로젝트에만 둔다. */
+  background?: ProjectBackground
   company: string
   /** 표시용 기간 (예: "2026.02 - 진행 중") */
   period: string
