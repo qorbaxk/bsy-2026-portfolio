@@ -65,7 +65,7 @@ ffprobe -v error -select_streams v:0 -show_entries stream=width,height -show_ent
 ```ts
 cover: {
   src: '/images/projects/<슬러그>/<이름>.webp',
-  alt: '<화면에 무엇이 보이는지 구체적으로. 예: PlayAuto Design System의 Storybook 소개 화면. 왼쪽에 메뉴, 오른쪽에 설치 방법이 보인다.>',
+  alt: '<화면에 무엇이 보이는지 구체적으로. 예: 디자인 시스템의 Storybook 소개 화면. 왼쪽에 메뉴, 오른쪽에 설치 방법이 보인다.>',
   width: 2000,
   height: 1093,
 },
