@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/shared/lib/cn'
 import { getTitleFontClass } from '@/shared/lib/title-font'
+import { withBasePath } from '@/shared/lib'
 import { StackList, type Project } from '@/entities/project'
 import { ButtonLink, Container, GuideBand, Icon } from '@/shared/ui'
 
@@ -49,7 +50,7 @@ export function CaseStudyHeader({ project }: { project: Project }) {
       {cover ? (
         <figure className={cn('mt-12', cover.height > cover.width && 'mx-auto max-w-xs')}>
           <Image
-            src={cover.src}
+            src={withBasePath(cover.src)}
             alt={cover.alt}
             width={cover.width}
             height={cover.height}

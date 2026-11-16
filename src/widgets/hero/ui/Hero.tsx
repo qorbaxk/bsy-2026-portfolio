@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Profile } from '@/entities/profile'
 import { ProjectCover, type FeaturedMetric, type Project } from '@/entities/project'
+import { withBasePath } from '@/shared/lib'
 import { Container, CtaBar, GuideBand } from '@/shared/ui'
 
 /**
@@ -31,7 +32,7 @@ export function Hero({ profile, metrics, projects }: HeroProps) {
           <div className="flex gap-5">
             <div className="relative aspect-[3/4] w-24 shrink-0 overflow-hidden rounded-md border border-line bg-surface sm:w-30">
               <Image
-                src={profile.photo.src}
+                src={withBasePath(profile.photo.src)}
                 alt={profile.photo.alt}
                 fill
                 sizes="120px"

@@ -4,6 +4,9 @@ export const alt = 'Baek Seungyeon | Frontend Developer Portfolio'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
+/** 정적 내보내기(output: 'export') 빌드에서 메타데이터 라우트를 빌드 시점에 한 번만 만들도록 고정한다. */
+export const dynamic = 'force-static'
+
 /** 공유 미리보기 이미지. 기본 폰트에는 한글 글리프가 없어 영문으로 구성한다. */
 export default function OpengraphImage() {
   return new ImageResponse(

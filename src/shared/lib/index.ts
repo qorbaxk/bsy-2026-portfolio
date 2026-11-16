@@ -1,4 +1,5 @@
 export { cn } from './cn'
+export { withBasePath } from './base-path'
 export { getHeadingId } from './dom-id'
 export { useActiveSection } from './hooks/useActiveSection'
 export { getTitleFontClass } from './title-font'

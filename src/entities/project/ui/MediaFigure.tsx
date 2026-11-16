@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { withBasePath } from '@/shared/lib'
 import { PausableVideo } from '@/shared/ui'
 import type { CaseMedia } from '../model/types'
 
@@ -14,7 +15,7 @@ export function MediaFigure({ media }: { media: CaseMedia }) {
       <div className="overflow-hidden rounded-xl border border-line bg-surface-muted">
         {media.type === 'image' ? (
           <Image
-            src={media.src}
+            src={withBasePath(media.src)}
             alt={media.alt}
             width={media.width}
             height={media.height}
@@ -22,7 +23,7 @@ export function MediaFigure({ media }: { media: CaseMedia }) {
             className="h-auto w-full"
           />
         ) : (
-          <PausableVideo src={media.src} poster={media.poster} label={media.alt} width={media.width} height={media.height} />
+          <PausableVideo src={withBasePath(media.src)} poster={withBasePath(media.poster)} label={media.alt} width={media.width} height={media.height} />
         )}
       </div>
       <figcaption className="mt-2 text-sm leading-relaxed text-ink-muted">{media.caption}</figcaption>
