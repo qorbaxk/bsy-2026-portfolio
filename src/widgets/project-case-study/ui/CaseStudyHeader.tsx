@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { cn } from '@/shared/lib/cn'
 import { getTitleFontClass } from '@/shared/lib/title-font'
 import { StackList, type Project } from '@/entities/project'
-import { Container, GuideBand, Icon } from '@/shared/ui'
+import { ButtonLink, Container, GuideBand, Icon } from '@/shared/ui'
 
 /**
  * @alias 케이스 스터디 머리말
- * @description 프로젝트 제목, 한 줄 소개, 기술 스택, 대표 화면을 보여주는 상세 페이지 상단. 대표 이미지는 next/image로 AVIF/WebP 변환과 반응형 크기를 적용한다.
+ * @description 프로젝트 제목, 한 줄 소개, 기술 스택, 서비스 링크(있을 때만), 대표 화면을 보여주는 상세 페이지 상단. 대표 이미지는 next/image로 AVIF/WebP 변환과 반응형 크기를 적용한다.
  */
 export function CaseStudyHeader({ project }: { project: Project }) {
-  const { order, title, headline, company, period, stack, cover } = project
+  const { order, title, headline, company, period, stack, links, cover } = project
 
   return (
     <GuideBand guides="quarters">
@@ -31,6 +31,19 @@ export function CaseStudyHeader({ project }: { project: Project }) {
       <div className="mt-8">
         <StackList items={stack} />
       </div>
+
+      {links?.length ? (
+        <ul className="mt-6 flex flex-wrap gap-3">
+          {links.map((link) => (
+            <li key={link.href}>
+              <ButtonLink href={link.href} variant="secondary">
+                {link.label}
+                <Icon name="arrowRight" size={16} />
+              </ButtonLink>
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       {cover ? (
         <figure className={cn('mt-12', cover.height > cover.width && 'mx-auto max-w-xs')}>

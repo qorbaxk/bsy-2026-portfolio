@@ -150,6 +150,17 @@ export interface CaseHighlight {
 }
 
 /**
+ * @alias 프로젝트 링크
+ * @description 프로젝트의 서비스나 저장소로 가는 외부 링크 한 개. 상세 페이지 상단에 버튼으로 표시한다.
+ */
+export interface ProjectLink {
+  /** 버튼 문구 (예: "서비스 바로가기") */
+  label: string
+  /** https로 시작하는 공개 주소 */
+  href: string
+}
+
+/**
  * @alias 프로젝트 커버 이미지
  * @description 프로젝트 대표 화면 이미지. next/image가 레이아웃 이동 없이 렌더링하도록 원본 크기를 함께 둔다.
  */
@@ -204,6 +215,8 @@ export interface Project {
   outcome: string
   metrics: readonly ProjectMetric[]
   stack: readonly string[]
+  /** 서비스·저장소 링크. 공개된 주소가 있는 프로젝트에만 두고, 없으면 필드를 생략한다. */
+  links?: readonly ProjectLink[]
   /** 목록 카드와 상세 상단에 쓰는 대표 화면 */
   cover?: ProjectCover
   highlights: readonly CaseHighlight[]
