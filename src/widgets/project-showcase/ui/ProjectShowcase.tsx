@@ -1,9 +1,9 @@
-import { ProjectCard, type Project } from '@/entities/project'
+import { ProjectCard, ProjectComingSoonCard, type Project } from '@/entities/project'
 import { Section, SectionHeading } from '@/shared/ui'
 
 /**
  * @alias 프로젝트 목록 섹션
- * @description 대표 프로젝트를 2열 타일로 보여준다. 각 카드는 케이스 스터디 상세 페이지로 연결된다.
+ * @description 대표 프로젝트를 2열 타일로 보여준다. 각 카드는 케이스 스터디 상세 페이지로 연결된다. 프로젝트 수가 홀수면 PC 화면의 마지막 빈 칸을 준비 중 카드로 채운다.
  */
 export function ProjectShowcase({ projects }: { projects: readonly Project[] }) {
   return (
@@ -21,6 +21,11 @@ export function ProjectShowcase({ projects }: { projects: readonly Project[] }) 
             <ProjectCard project={project} />
           </li>
         ))}
+        {projects.length % 2 === 1 && (
+          <li aria-hidden="true" className="hidden md:block">
+            <ProjectComingSoonCard />
+          </li>
+        )}
       </ul>
     </Section>
   )
